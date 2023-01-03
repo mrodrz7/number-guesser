@@ -8,8 +8,6 @@ function generateTarget() {
     return Math.floor(Math.random() * 10);
 };
 
-generateTarget();
-
 function compareGuesses(human, computer, target) {
     if (Math.abs(human - target) > Math.abs(computer - target)) {
         return true;
