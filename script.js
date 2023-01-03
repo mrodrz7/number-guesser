@@ -1,5 +1,5 @@
-let humanScore = 2;
-let computerScore = 5;
+let humanScore = 0;
+let computerScore = 0;
 let currentRoundNumber = 1;
 
 // Write your code below:
@@ -20,4 +20,7 @@ function compareGuesses(human, computer, target) {
     };
 };
 
-console.log(compareGuesses(humanScore, computerScore, generateTarget()));
+console.log(compareGuesses(1, 3, generateTarget()));
+
+function updateScore(winner) {
+}
