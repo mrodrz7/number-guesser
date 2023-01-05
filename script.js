@@ -23,4 +23,13 @@ function compareGuesses(human, computer, target) {
 console.log(compareGuesses(1, 3, generateTarget()));
 
 function updateScore(winner) {
-}
+    if (winner === 'human') {
+       return ++humanScore + `${winner}`;
+    } else if (winner === 'computer') {
+        return ++computerScore + `${winner}`;
+    } else {
+        console.log('Something went wrong.');
+    };
+};
+
+console.log(updateScore('computer'));
