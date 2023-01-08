@@ -1,6 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
-let currentRoundNumber = 1;
+let currentRoundNumber = 0;
 
 // Write your code below:
 
@@ -20,16 +20,23 @@ function compareGuesses(human, computer, target) {
     };
 };
 
-console.log(compareGuesses(1, 3, generateTarget()));
+compareGuesses(1, 3, generateTarget());
 
 function updateScore(winner) {
     if (winner === 'human') {
-       return ++humanScore + `${winner}`;
+       return ++humanScore;
     } else if (winner === 'computer') {
-        return ++computerScore + `${winner}`;
+        return ++computerScore;
     } else {
         console.log('Something went wrong.');
     };
 };
 
-console.log(updateScore('computer'));
+updateScore('human');
+
+function advanceRound() {
+    currentRoundNumber += 1;
+    return currentRoundNumber;
+};
+
+advanceRound();
