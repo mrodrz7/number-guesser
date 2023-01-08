@@ -9,14 +9,13 @@ function generateTarget() {
 };
 
 function compareGuesses(human, computer, target) {
-    if (Math.abs(human - target) > Math.abs(computer - target)) {
-        return true;
-    } else if (Math.abs(human - target) < Math.abs(computer - target)) {
-        return false;
-    } else if (Math.abs(human - target) === Math.abs(computer - target)) {
+    const humanDiff = Math.abs(human - target);
+    const computerDiff = Math.abs(computer - target);
+
+    if (humanDiff >= computerDiff) {
         return true;
     } else {
-        console.log('Something went wrong.');
+        return false;
     };
 };
 
@@ -24,9 +23,9 @@ compareGuesses(1, 3, generateTarget());
 
 function updateScore(winner) {
     if (winner === 'human') {
-       return ++humanScore;
+        ++humanScore;
     } else if (winner === 'computer') {
-        return ++computerScore;
+        ++computerScore;
     } else {
         console.log('Something went wrong.');
     };
